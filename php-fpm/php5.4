@@ -1,0 +1,15 @@
+FROM centos6
+MAINTAINER  HJ lxxpsp2007@126.com
+
+RUN mkdir -p /usr/local/libiconv-1.14/lib/
+ADD libltdl.so.7 libjpeg.so.62 libtidy-0.99.so.0 libfreetype.so.6 libpng12.so.0 /usr/lib64/
+ADD libmcrypt.so.4 /usr/local/lib/
+ADD libiconv.so.2 /usr/local/libiconv-1.14/lib/
+ADD php-5.4.25.tar.gz /usr/local/
+
+# php5.6 ADD libmemcached.so.11 libmemcachedutil.so.2 /usr/local/libmemcached-1.0.18/lib/
+
+ADD run.sh /
+
+CMD [ "/run.sh" ]
+ENTRYPOINT [ "bash" ]
