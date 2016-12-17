@@ -8,6 +8,6 @@ RUN yum -y install perl mysql-server mysql-devel
 ADD run.sh /
 RUN rm -rf /etc/my.cnf
 
-EXPOSE 3306
+#EXPOSE 3306
 CMD [ "/run.sh" ]
 ENTRYPOINT [ "bash" ]
