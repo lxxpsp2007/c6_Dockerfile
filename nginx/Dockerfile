@@ -1,10 +1,11 @@
-FROM  centos6:6.8
+FROM  centos6
 MAINTAINER  HJ lxxpsp2007@126.com
 
 ADD nginx-1.10.2.tar.gz /usr/local/
-
+ADD run.sh /
 
 EXPOSE 80
-ENTRYPOINT [ "/usr/local/nginx-1.10.2/sbin/nginx" ]
+CMD [ "/run.sh" ]
+ENTRYPOINT [ "bash" ]
 
 #/var/log/nginx/  /etc/nginx/conf/  /data/www/www
